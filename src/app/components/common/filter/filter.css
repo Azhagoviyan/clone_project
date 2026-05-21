@@ -1,0 +1,38 @@
+::ng-deep .filter-field .mat-mdc-text-field-wrapper {
+  background-color: white !important;
+  border: 1px solid #d1d5db !important;
+  border-radius: 6px !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+}
+
+::ng-deep .filter-field .mdc-notched-outline__leading,
+::ng-deep .filter-field .mdc-notched-outline__notch,
+::ng-deep .filter-field .mdc-notched-outline__trailing {
+  border: none !important;
+}
+
+::ng-deep .filter-field .mat-mdc-form-field-flex {
+  height: 40px !important;
+  align-items: center !important;
+  padding: 0 12px !important;
+}
+
+::ng-deep .filter-field .mat-mdc-form-field-infix {
+  padding: 0 !important;
+  min-height: unset !important;
+  display: flex !important;
+  align-items: center !important;
+  border-top: none !important;
+}
+
+::ng-deep .filter-field i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+::ng-deep .mat-mdc-form-field-subscript-wrapper {
+  display: none; /* removes extra bottom space */
+}

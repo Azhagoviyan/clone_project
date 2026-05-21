@@ -1,0 +1,17 @@
+::ng-deep .mat-mdc-row td.mat-mdc-cell {
+  border-bottom: 1px solid #e5e7eb !important;
+}
+
+::ng-deep .mat-mdc-header-row th.mat-mdc-header-cell {
+  border-bottom: 1px solid #e5e7eb !important;
+}
+
+::ng-deep .mat-mdc-header-row {
+  background-color: #f3f4f6 !important; 
+   border-bottom-color: #e5e7eb !important;
+}
+
+::ng-deep .mat-mdc-row {
+  background-color: white !important;
+  border-bottom-color: #e5e7eb !important; 
+}

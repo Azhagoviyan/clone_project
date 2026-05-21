@@ -1,0 +1,33 @@
+<div>
+
+  <!-- LABEL -->
+  <label class="block text-sm font-medium text-gray-800 mb-2">
+    {{ label }} @if (required) { <span class="text-red-500">*</span> }
+  </label>
+
+  <!-- DROPDOWN -->
+  <mat-form-field appearance="outline" class="w-full text-sm m-0 bg-white drawer-field custom-dropdown">
+
+    <mat-select [formControl]="control"  [placeholder]="placeholder"
+                panelClass="custom-select-panel" >
+
+      @for (item of options; track item.value) {
+        <mat-option [value]="item.value">
+          {{ item.label }}
+        </mat-option>
+      }
+
+    </mat-select>
+
+    <mat-icon class="custom-arrow">expand_more</mat-icon>
+
+  </mat-form-field>
+
+  <!-- ERROR -->
+  @if (control.touched && control.invalid) {
+    <p class="text-red-500 text-xs mt-1">
+      {{ label }} is required
+    </p>
+  }
+
+</div>

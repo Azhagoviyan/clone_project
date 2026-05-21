@@ -1,0 +1,102 @@
+<mat-drawer-container class="h-screen">
+    <mat-drawer-content>
+        
+<div class="p-6 bg-gray-50 min-h-screen flex flex-col">
+
+  <!-- TOP BAR -->
+  <div class="flex justify-between items-center mb-4">
+
+    <!-- LEFT -->
+    <div class="flex gap-3 items-center">
+
+      <!-- Search -->
+     <app-search
+             placeholder="Search users..."
+             [(value)]="searchText">
+             
+</app-search>
+
+     <div  class="flex items-center gap-2">
+       <!-- Role Filter --> 
+    <app-filter [options]="roles"
+                [(value)]="selectedRole">
+       
+    </app-filter>
+
+     </div>
+
+    </div>
+
+    <!-- RIGHT BUTTONS -->
+   <div class="flex gap-3 items-center">
+
+  <!-- Export -->
+      <app-button
+            label="Export"
+            icon="download"
+            variant="basic"
+            btnClass="!h-10 !px-4 !text-blue-600"
+            (clicked)="export()">
+       </app-button>
+
+  <!-- Bulk Add -->
+      <app-button
+           label="Bulk Add"
+           icon="group_add"
+           variant="basic"
+           btnClass="!h-10 !px-4 !text-blue-600"
+           (clicked)="bulkAdd()">
+       </app-button>
+
+  <!-- Add User (Primary) -->
+       <app-button
+             label="Add User"
+             icon="add"
+             variant="flat"
+             btnClass="!bg-blue-500 text-white !h-10 !px-5 !rounded-md"
+             (clicked)="openDrawer()">
+        </app-button>
+
+</div>
+  </div>
+
+  <!-- TABLE -->
+ <div class="bg-gray-50 rounded-lg border overflow-hidden">
+
+    <ng-template #nameTemplate let-user>
+  <div class="flex items-center gap-3">
+    <div
+      class="w-10 h-10 rounded-full flex items-center justify-center text-white"
+      [class]="user.color">
+      {{ user.initials }}
+    </div>
+    <span class="font-medium">{{ user.name }}</span>
+  </div>
+</ng-template>
+
+     <app-table 
+  [dataSource]="filteredUsers"
+  [columns]="columns">
+</app-table>
+</div>
+
+  <!-- FOOTER -->
+  <div class="text-center text-sm text-gray-500 mt-auto pt-4 border-t">
+    2026 © AlertOps · Privacy Policy | Terms & Conditions
+  </div>
+
+</div>
+    </mat-drawer-content>
+ 
+  <!-- DRAWER -->
+  <mat-drawer #drawer mode="over" position="end"
+              class="!min-w-fit !h-full !bg-white !flex !flex-col overflow-hidden">
+    <app-add-user class="h-full"
+      [userForm]="userForm"
+      (submitUserEvent)="submitUser()"
+      (addAnotherUserEvent)="addAnotherUser()"
+      (closeDrawerEvent)="closeDrawer()">
+    </app-add-user>
+  </mat-drawer>
+
+</mat-drawer-container>

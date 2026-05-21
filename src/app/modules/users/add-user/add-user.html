@@ -1,0 +1,122 @@
+<div class="flex flex-col h-full">
+     <!-- DRAWER HEADER -->
+<div class="flex justify-between items-center px-6 py-4 border-b border-gray-200">
+  <h2 class="text-base text-gray-900">Add User</h2>
+  <button class="w-8 h-8 flex items-center justify-center border-gray-300 rounded-md hover:bg-gray-100 transition" 
+          (click)="onCloseDrawer()">
+    <mat-icon class="text-gray-600">close</mat-icon>
+  </button>
+</div>
+
+<!-- DRAWER BODY -->
+<form [formGroup]="userForm()" class="flex-1 overflow-y-auto w-full px-6 py-5 space-y-5">
+
+  <!-- Email -->
+  <div>
+    <app-input
+      label="Email"
+      placeholder="Enter email address"
+      type="email"
+      [required]="true"
+      [control]="emailControl">
+    </app-input>
+  </div>
+
+  <!-- Use Email as Username checkbox -->
+  <div class="flex items-center gap-2">
+    <mat-checkbox [formControl]="useEmailControl" color="primary"></mat-checkbox>
+    <span class="text-sm text-gray-700">Use Email as User Name</span>
+  </div>
+
+  <div [hidden]="useEmailControl.value">
+    <app-input
+      label="User Name"
+      placeholder="Enter User name"
+      [required]="true"
+      [control]="userNameControl">
+    </app-input>
+  </div>
+
+  <!-- First + Last Name -->
+  <div class="flex gap-3">
+    <div class="flex-1">
+      <app-input
+        label="First Name"
+        placeholder="Enter first name"
+        [required]="true"
+        [control]="firstNameControl">
+      </app-input>
+    </div>
+    <div class="flex-1">
+      <app-input
+        label="Last Name"
+        placeholder="Enter last name"
+        [required]="true"
+        [control]="lastNameControl">
+      </app-input>
+    </div>
+  </div>
+
+  <!-- User Type + User Role -->
+  <div class="bg-blue-50/20 w-full h-50 p-4 rounded-xl flex gap-3">
+    <!-- User Type -->
+    <div class="flex-1">
+      <app-select
+        label="User Type"
+        placeholder="Select user type"
+        [required]="true"
+        [options]="[
+          { label: 'Billing Admin', value: 'billing_admin' },
+          { label: 'Standard', value: 'standard' }]"
+        [control]="userTypeControl">
+      </app-select>
+    </div>
+
+    <!-- User Role -->
+    <div class="flex-1">
+      <div>
+        <app-select
+          label="User Role"
+          placeholder="Select user role"
+          [required]="true"
+          [options]="[
+            { label: 'Administrator', value: 'administrator' },
+            { label: 'Manager', value: 'manager' },
+            { label: 'User', value: 'user' },
+            { label: 'Read Only', value: 'read_only' }]"
+          [control]="userRoleControl">
+        </app-select>
+      </div>
+    </div>
+  </div>
+
+</form>
+
+<!-- DRAWER FOOTER -->
+<div class="flex justify-end items-center gap-3 px-6 py-5 border-t border-gray-200 bg-white ">
+  <app-button
+    label="Cancel"
+    variant="stroked"
+    btnClass="!text-black !border-gray-400 !h-10 !px-5 !rounded-md"
+    (clicked)="onCloseDrawer()">
+  </app-button>
+
+  <app-button
+    label="+ Add Another User"
+    variant="stroked"
+    [disabled]="userForm().invalid"
+    btnClass="!text-blue-500 !h-10 !px-5 !rounded-md !border !border-blue-500"
+    (clicked)="onAddAnotherUser()">
+  </app-button>
+
+  <app-button
+    label="Submit"
+    variant="flat"
+    [disabled]="userForm().invalid"
+    btnClass="!bg-blue-600 !text-white !h-10 !px-5 !rounded-md"
+    (clicked)="onSubmitUser()">
+  </app-button>
+</div>
+
+
+</div>

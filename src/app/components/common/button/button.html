@@ -1,0 +1,52 @@
+<!-- BASIC BUTTON -->
+@if (variant === 'basic') {
+  <button
+    mat-button
+    [disabled]="disabled"
+    (click)="handleClick()"
+    [class]="btnClass"
+    class="flex items-center gap-2">
+
+    @if (icon) {
+      <mat-icon>{{ icon }}</mat-icon>
+    }
+    {{ label }}
+
+  </button>
+}
+
+
+<!-- FLAT BUTTON -->
+@if (variant === 'flat') {
+  <button
+    mat-flat-button
+    [disabled]="disabled"
+    (click)="handleClick()"
+    [class]="btnClass"
+    class="flex items-center gap-2">
+
+    @if (icon) {
+      <mat-icon>{{ icon }}</mat-icon>
+    }
+    {{ label }}
+
+  </button>
+}
+
+
+<!-- STROKED BUTTON -->
+@if (variant === 'stroked') {
+  <button
+    mat-stroked-button
+    [disabled]="disabled"
+    (click)="handleClick()"
+    [class]="btnClass"
+    class="flex items-center gap-2">
+
+    @if (icon) {
+      <mat-icon>{{ icon }}</mat-icon>
+    }
+    {{ label }}
+
+  </button>
+}

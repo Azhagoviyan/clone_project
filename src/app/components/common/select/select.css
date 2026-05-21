@@ -1,0 +1,70 @@
+::ng-deep .custom-dropdown .mat-mdc-select-trigger {
+  padding-right: 28px !important;
+}
+
+::ng-deep .custom-dropdown {
+  position: relative;
+  
+}
+
+::ng-deep .custom-dropdown .custom-arrow {
+ position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  height: 100%;
+  color: gray;
+  font-size: 22px;
+}
+
+::ng-deep .custom-select-panel {
+  background-color: white !important;
+  border-radius: 8px !important;
+}
+
+::ng-deep .custom-select-panel .mat-mdc-option.mdc-list-item--selected {
+  background-color: #3b82f6  !important; 
+  color: white !important;
+}
+
+::ng-deep .custom-select-panel .mat-pseudo-checkbox-checked::after {
+  color: white !important;  
+}
+
+::ng-deep .custom-select-panel .mat-pseudo-checkbox {
+  order: -1;          
+  margin-right: 8px;
+}
+
+
+::ng-deep .custom-select-panel .mdc-list-item--selected {
+  border-radius: 8px;
+  margin: 4px;   
+}
+
+::ng-deep .custom-select-panel .mat-mdc-option:hover {
+  border-radius: 8px !important;
+  background-color: #3b82f6   !important;
+  color: white !important;
+}
+::ng-deep .custom-select-panel .mat-mdc-option-active{
+  background-color:transparent !important;
+}
+
+
+::ng-deep .mat-mdc-select-arrow {
+  display: none !important;
+}
+
+::ng-deep .mat-mdc-select-trigger {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 !important;
+}
+
+
+
+        

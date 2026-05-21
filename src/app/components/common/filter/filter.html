@@ -1,0 +1,17 @@
+ <mat-form-field appearance="outline" class="w-52 h-10 text-sm m-0 filter-field custom-dropdown">
+        <mat-icon matPrefix>
+           <i class="fa-solid fa-filter text-gray-500 text-lg"></i>
+        </mat-icon>
+        <mat-select [value]="value"
+                    (selectionChange)="onChange($event.value)" 
+                    panelClass="custom-select-panel">
+          @for (item of options; track item) {
+            <mat-option [value]="item">
+              {{ item }}
+            </mat-option>
+          }
+        </mat-select>
+         <mat-icon class="custom-arrow">expand_more</mat-icon>
+      </mat-form-field>
+
+      

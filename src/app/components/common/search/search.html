@@ -1,0 +1,10 @@
+  <div class="flex items-center border rounded-md px-3 h-10 bg-white focus-within:border-blue-500 focus-within:ring-2 focus-within:ring-blue-400 ">
+        <mat-icon class="text-gray-500 mr-2">search</mat-icon>
+        <input
+          type="text"
+          placeholder="Search users..."
+          [(ngModel)]="value"
+          (ngModelChange)="onChange($event)"
+          class="outline-none text-sm w-48  "
+        />
+      </div>
